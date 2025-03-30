@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ROASGPTVI: robotic assembly task assisted by GPT-4 vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhancing Physical Human-Robot Interaction: Recognizing Digits via Intrinsic Robot Tactile Sensing</title>
+  <style>
+    .spaced-image-left {
+        padding-left: 10px; /* Adjust the value as needed */
+    }
+    .spaced-image-right {
+        padding-right: 10px; /* Adjust the value as needed */
+    }
+    .image-width {
+      width: 1500px; /* Adjust the value as needed */
+    }
+    .carousel-item {
+      text-align: center;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: black;
+    }
+    .author-block {
+            color: black;
+      }
+      .author-block a {
+          color: red; /* or whatever color you want for the link */
+      }
+
+      
+    
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icona_univpm.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<!-- POR FAZER-->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Enhancing Physical Human-Robot Interaction: Recognizing Digits via Intrinsic Robot Tactile Sensing</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.scopus.com/authid/detail.uri?authorId=58120272100">Teresa Sinico</a>,</span>
+                    <a href="https://scholar.google.com/citations?user=nWwhqOMAAAAJ&hl=en">Giovanni Boschetti</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=UnkrpWIAAAAJ&hl=en">Pedro Neto</a>        
+          </div>
+          <br>
+          <!-- <hr style="height:0px; visibility:hidden;" /> -->
+          <a href="https://www.unipd.it/en/" target="_blank">
+            <img src="./static/images/unipd_logo.png" width="25%" class="center-image" alt="UC Logo">
+        </a>
+          <a href="http://www.uc.pt" target="_blank">
+        <img src="./static/images/uc_logo.png" width="60%" class="center-image" alt="UC Logo">
+    </a>
+
+          <!-- <div class="is-size-3 publication-authors">
+            <span class="author-block">Cornell University</span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ieeexplore.ieee.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="http://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/cGAqGYaZYUc"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://doi.org/10.5281/zenodo.15107070"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIM -->
+
+
+
+
+
+
+
+<!-- Video S2 -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="publication-video">
+              <!-- add a link to youtube video using iframe -->
+              <!-- <video poster="" id="shiba" controls playsinline> -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cGAqGYaZYUc?si=-VQnPeVw5cgx2FM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <!-- </video>  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Dataset -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-8">Recognizing Digits via Intrinsic Robot Tactile Sensing: System Overview</h2>
+        <!-- <div class="publication-video"> -->
+          <img src="./static/images/fig2.jpg" class="image-width">
+          <br>
+          <br>
+          <li style="text-align: left;"> We leverage the intrinsic tactile sensing capabilities of collaborative robots to recognize digits drawn by humans on an uninstrumented touchpad mounted to the robot’s flange. </li>
+          <li style="text-align: left;"> pHRI-DIGI-TACT: a dataset of draw handwritten digits (0–9) on the touchpad captured from the robot’s integrated torque sensors in each joint (joint torques along with corresponding end-effector forces and moments. </li>
+          <li style="text-align: left;"> A data augmentation method accounts for reversed and rotated digits inputs. </li>
+          <li style="text-align: left;"> A Bidirectional Long Short-Term Memory (Bi-LSTM) network, leveraging the spatio-temporal nature of the data. </li>
+          
+
+          
+            
+        <!-- </div> -->
+      </div>
+    </div>
+       <br>
+    </p>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-8">Data augmentation to classify reversed and rotated digits </h2>
+        <!-- <div class="publication-video"> -->
+          <!-- align left -->
+           <!-- add a link to youtube video using iframe -->
+              <!-- <video poster="" id="shiba" controls playsinline> -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ERT424RAS3E?si=hogs8sj52a5eZOS3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <!-- </video>  -->
+          <br>
+         </p>
+      </div>
+    </div>
+    <br>
+
+  
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Real world deployment: fruit delivery</h2>
+
+          <img src="./static/images/demo.png">
+          <p style="text-align: left;">
+            <li style="text-align: left;"> The proposed methodology was implemented on a real robot in a fruit delivery task, demonstrating its potential to assist individuals in everyday life. </li>
+            <li style="text-align: left;"> Task management and safety are driven by a Hierarchical Finite State Machine (HFSM). </li>
+            <li style="text-align: left;"> The system performs online digit classification with an overall accuracy of 94% across various test scenarios, including those involving users who did not participate in training the system. </li> 
+          </p>
+          <!-- </div> -->
+      </div>
+    </div>
+    <br>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column" id="Paper">
+        <h2 class="title is-3">Paper</h2>
+    <div class="paper-thumbnail">
+        <a href="https://arxiv.org">
+            <img class="layered-paper-big" width="100%" src="./static/images/paper.png" alt="Paper thumbnail"/>
+        </a>
+    </div>
+    <div class="paper-info">
+        <!-- <a href="https://openreview.net/forum?id=rxlokRzNWRq"><h3>ManiCast: Collaborative Manipulation with Cost-Aware Human Forecasting</h3></a>
+        <p>Kushal Kedia, Prithwish Dan, Atiksh Bhardwaj, Sanjiban Choudhury</p> -->
+        <h3 class="title is-4" style="text-align: center;">BibTex</h3>
+<pre style="overflow-x:hidden; text-wrap:wrap; white-space: pre-wrap;"><code>@misc{sinico2024,
+  title={Enhancing Physical Human-Robot Interaction: Recognizing Digits via Intrinsic Robot Tactile Sensing}, 
+  author={Teresa Sinico, Giovanni Boschetti and Pedro Neto},
+  year={2024},
+  eprint={xxxxxxxxx},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/xxxxxxxx}, 
+}
+  
+</code></pre> 
+    </div>
+    </div>
+  
+</div>
+</section>
+
+<br>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
