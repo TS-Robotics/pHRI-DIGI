@@ -82,7 +82,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://www.scopus.com/authid/detail.uri?authorId=58120272100">Teresa Sinico</a>,</span>
+              <a href="https://scholar.google.com/citations?user=mJs3hqcAAAAJ&hl=en">Teresa Sinico</a>,</span>
                     <a href="https://scholar.google.com/citations?user=nWwhqOMAAAAJ&hl=en">Giovanni Boschetti</a>,</span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=UnkrpWIAAAAJ&hl=en">Pedro Neto</a>        
@@ -90,11 +90,14 @@
           <br>
           <!-- <hr style="height:0px; visibility:hidden;" /> -->
           <a href="https://www.unipd.it/en/" target="_blank">
-            <img src="./static/images/unipd_logo.png" width="25%" class="center-image" alt="UC Logo">
+            <img src="./static/images/unipd_logo.png" width="20%" class="center-image" alt="UC Logo">
         </a>
           <a href="http://www.uc.pt" target="_blank">
-        <img src="./static/images/uc_logo.png" width="60%" class="center-image" alt="UC Logo">
+        <img src="./static/images/uc_logo.png" width="50%" class="center-image" alt="UC Logo">
     </a>
+    <a href="http://www.uc.pt" target="_blank">
+      <img src="./static/images/lab_logo_color.jpeg" width="20%" class="center-image" alt="UC Logo">
+  </a>
 
           <!-- <div class="is-size-3 publication-authors">
             <span class="author-block">Cornell University</span>
@@ -192,16 +195,10 @@
       <div class="column is-four-fifths">
         <h2 class="title is-8">Recognizing Digits via Intrinsic Robot Tactile Sensing: System Overview</h2>
         <!-- <div class="publication-video"> -->
+          <p style="text-align: left;"> Imagine interacting with a robot simply by drawing on a touchpad. Our system leverages the power of <b>intrinsic tactile sensing</b> - using data directly from the <b>robot's joint torque sensors</b> to understand your input. As you draw a digit on the touchpad, the robot detects subtle changes in the forces and moments at its joints. This data then becomes the basis for real-time digit recognition. This eliminates the need for external sensors, reducing complexity and cost. </li>
+          </p>
+          <br>
           <img src="./static/images/fig2.jpg" class="image-width">
-          <br>
-          <br>
-          <li style="text-align: left;"> We leverage the intrinsic tactile sensing capabilities of collaborative robots to recognize digits drawn by humans on an uninstrumented touchpad mounted to the robot’s flange. </li>
-          <li style="text-align: left;"> pHRI-DIGI-TACT: a dataset of draw handwritten digits (0–9) on the touchpad captured from the robot’s integrated torque sensors in each joint (joint torques along with corresponding end-effector forces and moments. </li>
-          <li style="text-align: left;"> A data augmentation method accounts for reversed and rotated digits inputs. </li>
-          <li style="text-align: left;"> A Bidirectional Long Short-Term Memory (Bi-LSTM) network, leveraging the spatio-temporal nature of the data. </li>
-          
-
-          
             
         <!-- </div> -->
       </div>
@@ -209,13 +206,18 @@
        <br>
     </p>
 
+    
+
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-8">Data augmentation to classify reversed and rotated digits </h2>
+        <h2 class="title is-8">Digit Drawing Protocol & Data Augmentation for Reversed and Rotated Digits </h2>
         <!-- <div class="publication-video"> -->
           <!-- align left -->
            <!-- add a link to youtube video using iframe -->
               <!-- <video poster="" id="shiba" controls playsinline> -->
+                <p style="text-align: left;"> To build a robust and intuitive system, we developed a <b>standard digit drawing protocol</b>, as shown in the video below. While the initial dataset was collected using this protocol, our goal was to create a system capable of recognizing digits even when drawn in a <b>reversed manner</b> (e.g., starting the digit "2" from right to left instead of left to right) or <b>rotated by a certain angle</b>. To achieve this, we implemented a data augmentation technique. By applying transformations to our initial dataset collected from the standard protocol, we generated synthetic data representing reversed and rotated digits, significantly improving the system's adaptability to diverse user inputs. </li>
+                </p>
+                <br>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ERT424RAS3E?si=hogs8sj52a5eZOS3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <!-- </video>  -->
           <br>
@@ -224,23 +226,52 @@
     </div>
     <br>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-8">Classifying Digits Patterns with a Bidirectional LSTM Network</h2>
+        <!-- <div class="publication-video"> -->
+          <p style="text-align: left;"> Our system uses a Bidirectional Long Short-Term Memory (Bi-LSTM) network to classify the complex time-series data generated by digit drawing. This approach effectively captures the spatio-temporal relationships within the data. The result? High-accuracy, real-time digit classification. This network achieves an <b>overall accuracy of 94%</b> across various test scenarios, including those involving users who did not participate in the training phase, and with the robot in poses different than the one in which training data was recorded. </li>
+        </p>
+        <br>
+        <figure style="text-align: center; width: 50%; margin: 0 auto;">
+          <img src="./static/images/confusion_matrix.jpg" alt="Confusion Matrix" style="max-width: 100%; display: block;">
+      </figure>
+      <br>
+          
+            
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-8">Hierarchical Control and Safety Layer</h2>
+        <!-- <div class="publication-video"> -->
+          <p style="text-align: left;"> Even with high-accuracy AI models, potential misclassifications can always occur. Therefore, our system employs a <b>Hierarchical Finite State Machine (HFSM)</b> to <b>manage task execution and ensure safe interaction</b>. The robot interprets the drawn digit and uses synthesized speech to audibly confirm the recognized command with the user, mitigating the risk of unintended actions. Confirmation is then received through a simple tap on the robot's arm. This simple mechanism is an intuitive interface for the human and is very easy to interpret by humans. This multimodal approach (touch + voice) leverages the naturalness of touch and voice communication, adding a layer of safety and user control.</li>
+          </p>
+            <br>
+            <figure style="text-align: center; width: 60%; margin: 0 auto;">
+              <img src="./static/images/state_machine.jpg" alt="State Machine" style="max-width: 100%; display: block;">
+          </figure>
+
+          
+            
+        <!-- </div> -->
+      </div>
+    </div>
+
   
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Real world deployment: fruit delivery</h2>
-
-          <img src="./static/images/demo.png">
-          <p style="text-align: left;">
-            <li style="text-align: left;"> The proposed methodology was implemented on a real robot in a fruit delivery task, demonstrating its potential to assist individuals in everyday life. </li>
-            <li style="text-align: left;"> Task management and safety are driven by a Hierarchical Finite State Machine (HFSM). </li>
-            <li style="text-align: left;"> The system performs online digit classification with an overall accuracy of 94% across various test scenarios, including those involving users who did not participate in training the system. </li> 
-          </p>
+        <h2 class="title is-3"> Validation through Real-World Use Case: Fruit Delivery Task</h2>
+        <p style="text-align: left;"> To demonstrate the practicality of our system, we implemented a fruit delivery task. Users simply draw the digit corresponding to their desired fruit, and the robot autonomously retrieves and presents the item. This showcases the potential of intrinsic tactile sensing for intuitive and accessible human-robot collaboration in everyday scenarios. </li>
+        </p>
+          <br>
+          <img src="./static/images/demo_v2.jpg">
+          
           <!-- </div> -->
       </div>
     </div>
-    <br>
-
-
 
 
 
@@ -254,17 +285,17 @@
         <h2 class="title is-3">Paper</h2>
     <div class="paper-thumbnail">
         <a href="https://arxiv.org">
-            <img class="layered-paper-big" width="100%" src="./static/images/paper.png" alt="Paper thumbnail"/>
+            <img class="layered-paper-big" width="100%" src="./static/images/paper_img.jpg" alt="Paper thumbnail"/>
         </a>
     </div>
     <div class="paper-info">
         <!-- <a href="https://openreview.net/forum?id=rxlokRzNWRq"><h3>ManiCast: Collaborative Manipulation with Cost-Aware Human Forecasting</h3></a>
         <p>Kushal Kedia, Prithwish Dan, Atiksh Bhardwaj, Sanjiban Choudhury</p> -->
         <h3 class="title is-4" style="text-align: center;">BibTex</h3>
-<pre style="overflow-x:hidden; text-wrap:wrap; white-space: pre-wrap;"><code>@misc{sinico2024,
+<pre style="overflow-x:hidden; text-wrap:wrap; white-space: pre-wrap;"><code>@misc{Sinico2025,
   title={Enhancing Physical Human-Robot Interaction: Recognizing Digits via Intrinsic Robot Tactile Sensing}, 
   author={Teresa Sinico, Giovanni Boschetti and Pedro Neto},
-  year={2024},
+  year={2025},
   eprint={2504.00167},
   archivePrefix={arXiv},
   primaryClass={cs.RO},
